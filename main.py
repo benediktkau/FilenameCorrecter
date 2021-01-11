@@ -33,7 +33,7 @@ class InvalidFilenameCorrecter:
             filepath = directories[0]
 
             # Check for invalid characters
-            if self.invalid_characters(filepath):
+            if self.invalid_characters(filepath) or filepath[-1] == ' ':
                 updated_filepath = self.replace_invalid_characters(filepath)
 
                 # Print updated filepath
@@ -57,7 +57,7 @@ class InvalidFilenameCorrecter:
             # Iterate over all files in currently selected directory
             for filename in directories[2]:
 
-                if self.invalid_characters(filename) or filename[0] == ' ':
+                if self.invalid_characters(filename) or filename[0] == ' ' or filename[-1] == ' ':
 
                     # increment counters
                     self.invalid_file_count += 1
@@ -86,7 +86,7 @@ class InvalidFilenameCorrecter:
         for c in self.invalid_char_set:
             if c in string:
                 string = string.replace(c, '_')
-        return string.strip()
+        return string.strip() # remove leading spaces
 
 
 # Press the green button in the gutter to run the script.
