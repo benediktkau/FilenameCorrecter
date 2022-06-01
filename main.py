@@ -91,7 +91,7 @@ class InvalidFilenameCorrecter:
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    test = InvalidFilenameCorrecter('/Users/benediktkau/OneDrive - University College London')
+    test = InvalidFilenameCorrecter('...')
     test.correct_directories()
     test.correct_filenames()
     test.get_result()
